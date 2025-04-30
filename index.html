@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Enter Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: "SUSE", "Segoe UI", Arial, sans-serif;
@@ -17,20 +15,27 @@
       margin: 0;
       color: white;
       flex-direction: column;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
     input {
-      padding: 10px; 
-      font-size: 1rem;
-      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1.25rem;
+      border-radius: 12px;
       border: none;
-      margin-bottom: 10px;
-      width: 200px;
+      margin-bottom: 1rem;
+      width: 80%;
+      max-width: 400px;
       text-align: center;
     }
     button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      border-radius: 12px;
       border: none;
       background-color: white;
       color: #2575fc;
@@ -52,13 +57,12 @@
     function redirectToPDF() {
       const code = document.getElementById('codeInput').value.trim();
       if (code) {
-        window.location.href = `${code}.pdf`;
+        window.location.href = `ssdata/${code}.pdf`;
       } else {
         alert("Please enter a code.");
       }
     }
 
-    // Allow pressing Enter to submit
     document.getElementById('codeInput').addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
         redirectToPDF();
