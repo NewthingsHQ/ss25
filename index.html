@@ -45,7 +45,7 @@
 
   <script>
     function redirectToPDF() {
-      const code = document.getElementById('codeInput').value.trim();
+      const code = document.getElementById('codeInput').value.trim().toUpperCase();
       if (code) {
         window.location.href = `ssdata/${code}.pdf`;
       } else {
